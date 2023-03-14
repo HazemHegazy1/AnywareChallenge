@@ -1,24 +1,25 @@
 import React, { useState } from 'react';
-
+import {  useDispatch } from 'react-redux';
+import { login } from '../../reducers/reduxStore'
 import './LoginPage.css';
-import BlueArt from "../../assets/LoginBlueIllustration.png";
 import Logo from "../../assets/logo.png"
-function LoginPage() {
+import { useNavigate } from 'react-router-dom';
+
+const LoginPage = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleUsernameChange = (event) => {
-    setUsername(event.target.value);
-  }
+ 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    dispatch(login());
+    navigate('/search');
 
-  const handlePasswordChange = (event) => {
-    setPassword(event.target.value);
-  }
+  };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    console.log('Submitted:', username, password);
-  }
 
   return (
     <div className="login-container">
@@ -28,13 +29,25 @@ function LoginPage() {
         <h3>Nice to see you again</h3>
         <h1>WELCOME BACK</h1>
         </div>
-      <form onSubmit={handleSubmit}>
+
+        <form onSubmit={handleSubmit}>
         <h2>Login</h2>
         <label htmlFor="username">Username</label>
-        <input type="text" id="username" value={username} onChange={handleUsernameChange} />
-        <label htmlFor="password">Password</label>
-        <input type="password" id="password" value={password} onChange={handlePasswordChange} />
-        <button type="submit">Submit</button>
+         <input
+          type="text"
+          placeholder="Username"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+        />
+          <label htmlFor="password">Password</label>
+        <input
+          type="password"
+          placeholder="Password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+        
+        <button type="submit" onClick={handleSubmit}>Login</button>
       </form>
       
     </div>

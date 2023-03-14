@@ -1,0 +1,29 @@
+.Result{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 440px;
+    height: 140px;
+    background-image: linear-gradient(var(--primary-light),var(--primary-dark));
+    border-radius: 20px;
+    margin:10px;
+    color: white;
+    word-break: keep-all;
+    
+}
+.Result h1{
+    font-size:25px;
+    margin: 5px;
+
+    
+}
+.Result h2{
+    font-size: 25px;
+    font-weight: lighter;
+    margin: 5px;
+}
+.Entry{
+    display: flex;
+    flex-direction: row;
+}

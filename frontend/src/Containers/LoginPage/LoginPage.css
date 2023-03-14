@@ -1,0 +1,102 @@
+.login-container {
+    display: flex;
+    flex-direction: row;
+  
+    height: 100vh;
+  }
+  
+  .login-container form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 50%;
+    max-width: 50%; /* Set max width for larger screens */
+    min-height: 350px;
+  }
+ 
+  
+  .login-container h2 {
+    margin-bottom: 20px;
+  }
+  
+  .login-container label {
+    margin-bottom: 10px;
+  }
+  
+  .login-container input {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    width: 40%;
+  }
+  
+  .login-container button {
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 15px;
+    width: 30%;
+    cursor: pointer;
+  }
+  
+  .login-container button:hover {
+    background-color: #0069d9;
+  }
+
+  .login_Logo{
+    position: absolute;
+    width:100px;
+    top:0%;
+    left: 0%;
+    margin: 10px;
+  }
+  
+  .BlueContent{
+     background-image: url("../../assets/LoginBlueIllustration.png");
+    display: flex;
+    flex-direction: column;
+    min-width: 50%;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+  }
+  .BlueContent h1{
+    font-size: 80px;
+    margin-top: 0px;
+
+  }
+  
+  
+  /* for smaller screens */
+  @media screen and (max-width: 600px) {
+    .login-container form {
+      padding: 15px;
+    }
+    .login-container input {
+        padding: 10px;
+       
+      }
+  }
+  
+  /* for even smaller screens */
+  @media screen and (max-width: 400px) {
+    .login-container form {
+      max-width: 300px;
+    }
+  
+    .login-container h2 {
+      font-size: 1.5rem;
+    }
+  
+    .login-container input, .login-container button {
+      font-size: 0.8rem;
+    }
+  }
+  
